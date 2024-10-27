@@ -1,8 +1,8 @@
 import copy
 
-"""..................... Έλεγχοι χρήσης των τελεστών μετάβασης ....................."""
+"""..................... Usage checks of transition operators ....................."""
 
-""" Έλεγχος χρήσης του τελεστή φαγώματος φρούτου """
+""" Check usage of the fruit-eating operator """
 def can_eat(state):
    for row in range(len(state)):
       for col in range(len(state[row])):
@@ -10,37 +10,37 @@ def can_eat(state):
             return 1
    return 0 
 
-""" Έλεγχος χρήσης του τελεστή μετακίνησης προς τα δεξιά """
+""" Check usage of the move-right operator """
 def can_move_right(state):
    for row in range(len(state)):
       if state[row][len(state[row]) - 1][0] == 'p':
          return 0
    return 1
 
-""" Έλεγχος χρήσης του τελεστή μετακίνησης προς τα αριστερά """
+""" Check usage of the move-left operator """
 def can_move_left(state):
    for row in range(len(state)):
       if state[row][0][0] == 'p':
          return 0
    return 1
 
-""" Έλεγχος χρήσης του τελεστή μετακίνησης προς τα πάνω """
+""" Check usage of the move-up operator """
 def can_move_up(state):
    for col in range(len(state[0])):
       if state[0][col][0] == 'p':
          return 0
    return 1
 
-""" Έλεγχος χρήσης του τελεστή μετακίνησης προς τα κάτω """
+""" Check usage of the move-down operator """
 def can_move_down(state):
    for col in range(len(state[len(state) - 1])):
       if state[len(state) - 1][col][0] == 'p':
          return 0
    return 1
 
-"""..................... Τελεστές Μετάβασης ....................."""
+"""..................... Transition Operators ....................."""
 
-""" Τελεστής φαγώματος φρούτου """ 
+""" Fruit-eating operator """ 
 def eat(state):
    if can_eat(state):
       for row in range(len(state)):
@@ -51,7 +51,7 @@ def eat(state):
    else:
       return None
 
-""" Τελεστής μετακίνησης προς τα δεξιά """ 
+""" Move-right operator """ 
 def move_right(state):
    if can_move_right(state):
       for row in range(len(state)):
@@ -63,7 +63,7 @@ def move_right(state):
    else: 
       return None
 
-""" Τελεστής μετακίνησης προς τα αριστερά """ 
+""" Move-left operator """ 
 def move_left(state):
    if can_move_left(state):
       for row in range(len(state)):
@@ -75,7 +75,7 @@ def move_left(state):
    else: 
       return None
 
-""" Τελεστής μετακίνησης προς τα πάνω """ 
+""" Move-up operator """ 
 def move_up(state):
    if can_move_up(state):
       for row in range(len(state)):
@@ -87,7 +87,7 @@ def move_up(state):
    else: 
       return None
 
-""" Τελεστής μετακίνησης προς τα κάτω """ 
+""" Move-down operator """ 
 def move_down(state):
    if can_move_down(state):
       for row in range(len(state)):
@@ -99,9 +99,9 @@ def move_down(state):
    else: 
       return None
 
-"""..................... Αλγόριθμοι αναζήτησης DFS και BFS ....................."""
+"""..................... DFS and BFS Search Algorithms ....................."""
 
-""" Έλεγχος εύρεσης τελικής κατάστασης """
+""" Check for finding the goal state """
 def is_goal_state(state):
    for row in range(len(state)):
       for col in range(len(state[row])):
@@ -109,15 +109,15 @@ def is_goal_state(state):
             return 0
    return 1
 
-""" Αρχικοποίηση του μετώπου αναζήτησης """
+""" Initialize the search front """
 def make_front(state):
    return [state]
 
-""" Αρχικοποίηση της ουράς αναζήτησης """
+""" Initialize the search queue """
 def make_queue(state):
     return [[state]]
 
-""" Συνάρτηση εύρεσης μονοπατιού που οδηγεί από την αρχική κατάσταση στην τελική μέσω των αλγορίθμων αναζήτησης DFS ή BFS """
+""" Function to find the path from the initial state to the goal state using DFS or BFS algorithms """
 def find_solution(front, queue, closed, goal, method):
    if not front:
       print('No solution found! End of searching...')
@@ -131,7 +131,7 @@ def find_solution(front, queue, closed, goal, method):
       print('Goal found!')                         
       for i in range(len(queue[0])):
             for j in range(len(queue[0][i])):
-               print(queue[0][i][j])               # Οι κόμβοι-καταστάσεις στο τελικό μονοπάτι απεικονίζονται δισδιάστατα και ο ένας κάτω από τον άλλον
+               print(queue[0][i][j])               # Nodes-states in the final path are displayed in a 2D array format one below the other
             print (' ')
    else:
       closed.append(front[0])
@@ -142,105 +142,106 @@ def find_solution(front, queue, closed, goal, method):
       closed_copy = copy.deepcopy(closed)
       find_solution(front_children, queue_children, closed_copy, goal, method)
 
-""" Επέκταση του μετώπου αναζήτησης """
+""" Expand the search front """
 def expand_front(front, method):  
-   if method == 'DFS':                         # Επέκταση του μετώπου αναζήτησης του αλγορίθμου αναζήτησης DFS
+   if method == 'DFS':                         # Expand the DFS search front
       if front:
          print("Front : ")
          for i in range(len(front)):
             for j in range(len(front[i])):
-               print(front[i][j])              # Οι κόμβοι-καταστάσεις στο μέτωπο αναζήτησης απεικονίζονται δισδιάστατα και ο ένας κάτω από τον άλλον
+               print(front[i][j])              # Nodes-states in the search front are displayed in a 2D array format one below the other
             print (' ')
          print('_______________________________________')
-         node = front.pop(0)                   # Αφαίρεση του πρώτου κόμβου-κατάσταση από το μέτωπο αναζήτησης
-         for child in find_children(node):     # Εύρεση καταστάσεων-παιδιά του κόμβου που αφαιρέθηκε από το μέτωπο, μέσω της συνάρτησης find_children
-            front.insert(0, child)             # Οι καταστάσεις-παιδιά του κόμβου που αφαιρέθηκε, τοποθετούνται σε δομή στοίβας (LIFO) στην αρχή του μετ΄΄ωπου αναζήτησης
-   elif method == 'BFS':                       # Επέκταση του μετώπου αναζήτησης του αλγορίθμου αναζήτησης BFS    
+         node = front.pop(0)                   # Remove the first node-state from the search front
+         for child in find_children(node):     # Find child states of the removed node using the find_children function
+            front.insert(0, child)             # Child states are placed in a stack (LIFO) at the beginning of the search front
+   elif method == 'BFS':                       # Expand the BFS search front    
       if front:
          print ("Front : ")
          for i in range(len(front)):
             for j in range(len(front[i])):
-               print(front[i][j])              # Οι κόμβοι-καταστάσεις στο μέτωπο αναζήτησης απεικονίζονται δισδιάστατα και ο ένας κάτω από τον άλλον
+               print(front[i][j])              # Nodes-states in the search front are displayed in a 2D array format one below the other
             print(' ')
          print('_______________________________________')
-         node = front.pop(0)                   # Αφαίρεση του πρώτου κόμβου-κατάσταση από το μέτωπο αναζήτησης
-         for child in find_children(node):     # Εύρεση καταστάσεων-παιδιά του κόμβου που αφαιρέθηκε από το μέτωπο, μέσω της συνάρτησης find_children
-            front.append(child)                # Οι καταστάσεις-παιδιά του κόμβου που αφαιρέθηκε, τοποθετούνται σε δομή ουράς (FIFO) στο τέλος του μετώπου αναζήτησης
+         node = front.pop(0)                   # Remove the first node-state from the search front
+         for child in find_children(node):     # Find child states of the removed node using the find_children function
+            front.append(child)                # Child states are placed in a queue (FIFO) at the end of the search front
             
    return front
 
-""" Επέκταση της ουράς αναζήτησης """
+""" Expand the search queue """
 def extend_queue(queue, method):
-# Επέκταση της ουράς αναζήτησης του αλγορίθμου αναζήτησης DFS
+# Expand the DFS search queue
    if method == 'DFS':                         
       print ("Queue : ")
       for i in range(len(queue)):
          for j in range(len(queue[i])):
             for w in range(len(queue[i][j])):
-               print(queue[i][j][w])           # Οι κόμβοι-καταστάσεις στην ουρά αναζήτησης απεικονίζονται δισδιάστατα και ο ένας κάτω από τον άλλον 
-            print (' ')                        # Ένα μονοπάτι είναι μία σειρά από κόμβους ο ένας κάτω από τον άλλον και τελειώνει στον κόμβο που εμφανίζεται πριν το μήνυμα "End of path"
+               print(queue[i][j][w])           # Nodes-states in the search queue are displayed in a 2D array format one below the other 
+            print (' ')                        # A path is a series of nodes, one below the other, ending with the node that appears before the "End of path" message
          print ('------------ End of path ------------')
          print (' ')
       print('_______________________________________')
-      node = queue.pop(0)                      # Αφαίρεση του πρώτου μονοπατιού από την ουρά αναζήτησης
+      node = queue.pop(0)                      # Remove the first path from the search queue
       queue_copy = copy.deepcopy(queue)
-      children = find_children(node[-1])       # Εύρεση καταστάσεων-παιδιά του κόμβου που βρισκόταν στο τέλος του μονοπατιού που αφαιρέθηκε από την ουρά, μέσω της κλήσης find_children
+      children = find_children(node[-1])       # Find child states of the last node in the removed path using the find_children function
       for child in children:
          path = copy.deepcopy(node)
-         path.append(child)                    # Οι καταστάσεις-παιδιά αποθηκεύονται στη λίστα path δημιουργώντας ένα νέο μονοπάτι με τερματισμό έναν κόμβο-παιδί του τελευταίου κόμβου που βρισκόταν στο μονοπάτι που αφαιρέθηκε από την ουρά 
-         queue_copy.insert(0,path)             # Το μονοπάτι τοποθετείται σε δομή στοίβας (LIFO), στην αρχή της ουράς αναζήτησης
-# Επέκταση της ουράς αναζήτησης του αλγορίθμου αναζήτησης BFS
+         path.append(child)                    # Child states are stored in the path list, creating a new path ending in a child node of the last node in the removed path
+         queue_copy.insert(0, path)            # The path is placed in a stack (LIFO), at the beginning of the search queue
+# Expand the BFS search queue
    elif method == 'BFS':                       
       print ("Queue : ")
       for i in range(len(queue)):
          for j in range(len(queue[i])):
             for w in range(len(queue[i][j])):
-               print(queue[i][j][w])           # Οι κόμβοι-καταστάσεις στην ουρά αναζήτησης απεικονίζονται δισδιάστατα και ο ένας κάτω από τον άλλον 
+               print(queue[i][j][w])           # Nodes-states in the search queue are displayed in a 2D array format one below the other 
             print (' ')
          print ('------------ End of path ------------')
          print (' ')
       print('_______________________________________')
-      node = queue.pop(0)                      # Αφαίρεση του πρώτου μονοπατιού από την ουρά αναζήτησης
+      node = queue.pop(0)                      # Remove the first path from the search queue
       queue_copy = copy.deepcopy(queue)
-      children = find_children(node[-1])       # Εύρεση καταστάσεων-παιδιά του κόμβου που βρισκόταν στο τέλος του μονοπατιού που αφαιρέθηκε από την ουρά, μέσω της κλήσης find_children
+      children = find_children(node[-1])       # Find child states of the last node in the removed path using the find_children function
       for child in children:
          path = copy.deepcopy(node)
-         path.append(child)                    # Οι καταστάσεις-παιδιά αποθηκεύονται στη λίστα path δημιουργώντας ένα νέο μονοπάτι με τερματισμό έναν κόμβο-παιδί του τελευταίου κόμβου που βρισκόταν στο μονοπάτι που αφαιρέθηκε από την ουρά 
-         queue_copy.append(path)               # Το μονοπάτι τοποθετείται σε δομή ουράς (FIFO), στo τέλος της ουράς αναζήτησης
+         path.append(child)                    # Child states are stored in the path list, creating a new path ending in a child node of the last node in the removed path
+         queue_copy.append(path)               # The path is placed in a queue (FIFO), at the end of the search queue
     
    return queue_copy
 
-""" Συνάρτηση εύρεσης απογόνων μίας κατάστασης-κόμβος """
+""" Function to find descendants of a node state """
 def find_children(state):
    children = []
-   right_state = copy.deepcopy (state)       
-   child_right = move_right (right_state)      # Εύρεση απογόνου-καταστάση με την οποία ο pacman μπορεί να μετακινηθεί προς τα δεξιά 
-   left_state = copy.deepcopy (state) 
-   child_left = move_left (left_state)         # Εύρεση απογόνου-καταστάση με την οποία ο pacman μπορεί να μετακινηθεί προς τα αριστερά 
-   up_state = copy.deepcopy (state)
-   child_up = move_up (up_state)               # Εύρεση απογόνου-καταστάση με την οποία ο pacman μπορεί να μετακινηθεί προς τα πάνω 
-   down_state = copy.deepcopy (state)
-   child_down = move_down (down_state)         # Εύρεση απογόνου-καταστάση με την οποία ο pacman μπορεί να μετακινηθεί προς τα κάτω
-   eat_state = copy.deepcopy (state)
-   child_eat = eat (eat_state)                 # Εύρεση απογόνου-καταστάση με την οποία ο pacman μπορεί να φάει φρούτο
-   
-   if not child_right == None:                 # Έλεγχος τυχόν εύρεσης απογόνου-κατάσταση με την οποία ο pacman μπορεί να μετακινηθεί προς τα δεξιά
-      children.append(child_right)
-   if not child_left == None:                  # Έλεγχος τυχόν εύρεσης απογόνου-κατάσταση με την οποία ο pacman μπορεί να μετακινηθεί προς τα αριστερά
-      children.append(child_left)  
-   if not child_up == None:                    # Έλεγχος τυχόν εύρεσης απογόνου-κατάσταση με την οποία ο pacman μπορεί να μετακινηθεί προς τα πάνω
-      children.append(child_up)                  
-   if not child_down == None:                  # Έλεγχος τυχόν εύρεσης απογόνου-κατάσταση με την οποία ο pacman μπορεί να μετακινηθεί προς τα κάτω
-      children.append(child_down)    
-   if not child_eat == None:                   # Έλεγχος τυχόν εύρεσης απογόνου-κατάσταση με την οποία ο pacman μπορεί να φάει φρούτο
-      children.append(child_eat)
+   right_state = copy.deepcopy(state)       
+   child_right = move_right(right_state)      # Find descendant-state where pacman can move to the right 
+   left_state = copy.deepcopy(state) 
+   child_left = move_left(left_state)         # Find descendant-state where pacman can move to the left 
+   up_state = copy.deepcopy(state)
+   child_up = move_up(up_state)               # Find descendant-state where pacman can move up 
+   down_state = copy.deepcopy(state)
+   child_down = move_down(down_state)         # Find descendant-state where pacman can move down 
+   eat_state = copy.deepcopy(state) 
+   child_eat = eat(eat_state)                 # Find descendant-state where pacman eats fruit 
 
-   return children
+   if child_right:
+      children.append(child_right)            # If the descendant-state is not null, add it to the list of descendants
+   if child_left:
+      children.append(child_left)
+   if child_up:
+      children.append(child_up)
+   if child_down:
+      children.append(child_down)
+   if child_eat:
+      children.append(child_eat)
     
-"""..................... Ο κόσμος του προβλήματος ....................."""
+   return children
+
+    
+"""..................... Problem World ....................."""
 
 def main():
-   # Αρχική και τελική κατάσταση του προβλήματος σε διαστάσεις 4x4 (προτιμάται ο DFS για κύριο αλγόριθμο αναζήτησης)
+   # Initial and goal state of the problem in 4x4 dimensions (DFS is preferred as the main search algorithm)
    
    init_state = [[[' ', 'f'], [' ', 'f'], [' ', ' '], [' ', 'f']], 
                  [[' ', ' '], [' ', ' '], ['p', ' '], [' ', 'f']], 
@@ -252,13 +253,13 @@ def main():
                  [[' ', ' '], [' ', ' '], [' ', ' '], [' ', ' ']], 
                  [[' ', ' '], [' ', ' '], [' ', ' '], ['p', ' ']]]   
    
-   # Αρχική και τελική κατάσταση του προβλήματος για την περίπτωση που δεν μπορεί να βρεθεί λύση 
+   # Initial and goal state of the problem for a case where a solution cannot be found 
    """
    init_state = []
    
    goal_state = []
    """
-   # Αρχική και τελική κατάσταση του προβλήματος για την περίπτωση που η τελική κατάσταση είναι η ίδια η αρχική 
+   # Initial and goal state of the problem where the initial state is the same as the goal state 
    """ 
    init_state = [[[' ', ' '], ['p', ' '], [' ', ' '],
                   [' ', ' '], [' ', ' '], [' ', ' '],
@@ -268,7 +269,7 @@ def main():
                   [' ', ' '], [' ', ' '], [' ', ' '],
                   [' ', ' '], [' ', ' '], [' ', ' ']]]
    """
-   # Αρχική και τελική κατάσταση του προβλήματος σε διαστάσεις 2x2 (προτιμάται ο BFS για το Βήμα Δ)
+   # Initial and goal state of the problem in 2x2 dimensions (BFS is preferred for Step D)
    """
    init_state = [[[' ', 'f'], ['p', ' ']],
                  [[' ', 'f'], [' ', ' ']]]
@@ -276,7 +277,7 @@ def main():
    goal_state = [[[' ', ' '], [' ', ' ']],
                  [['p', ' '], [' ', ' ']]]
    """
-   # Αρχική και τελική κατάσταση του προβλήματος σε διαστάσεις 2x2 (προτιμάται ο BFS για το Βήμα Δ)
+   # Initial and goal state of the problem in 2x2 dimensions (BFS is preferred for Step D)
    """
    init_state = [[[' ', ' '], [' ', 'f']],
                  [['p', ' '], [' ', 'f']]]
@@ -285,14 +286,14 @@ def main():
                  [[' ', ' '], [' ', ' ']]]
    """
    method = 'Blind searching algorithm'
-   # Επιλογή ενός από τους δύο αλγόριθμους αναζήτησης DFS ή BFS για τον κύριο αλγόριθμο αναζήτησης επίλυσης του προβλήματος με τον pacman
+   # Choose between the two search algorithms, DFS or BFS, as the main search algorithm to solve the pacman problem
    while method != 'DFS' and method != 'BFS':
       method = input('Choose between DFS and BFS as main blind searching algorithm : ')
-   # Κλήση της find_solution για την εύρεση μονοπατιού που θα οδηγήσει από την προεπιλεγμένη αρχική στην τελική κατάσταση με βάση προεπιλεγμένο αλγόριθμο αναζήτησης
-   print (' ')
-   print ('Begin Searching...')
-   print ('Searching algorithm :',method)
-   print (' ')
+   # Call find_solution to find the path that will lead from the predefined initial to the goal state using the selected search algorithm
+   print(' ')
+   print('Begin Searching...')
+   print('Searching algorithm :', method)
+   print(' ')
    find_solution(make_front(init_state), make_queue(init_state), [], goal_state, method)
 
 if __name__ == "__main__":
