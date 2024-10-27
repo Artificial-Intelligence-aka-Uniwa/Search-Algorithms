@@ -1,0 +1,6 @@
+Choose between DFS and BFS as main blind searching algorithm :  
+Begin Searching...
+Searching algorithm : BFS
+ 
+Goal found!
+ 
