@@ -98,9 +98,21 @@ The project combines **theoretical problem formulation** with **practical algori
 
 ## Technologies Used
 
-- **Programming Language:** Python  
-- **Search Technique:** Breadth-First Search (BFS), Depth-First Search (DFS)  
-- **Problem Domain:** Artificial Intelligence / State Space Search
+- **Programming Language:** Python 3  
+- **Search Algorithms:**  
+  - Depth-First Search (DFS)  
+  - Breadth-First Search (BFS)  
+- **Artificial Intelligence Concepts:**  
+  - State Space Representation  
+  - Transition Operators  
+  - Blind Search Algorithms  
+- **Data Structures:**  
+  - Lists (front, queue, paths, closed set)  
+  - Two-dimensional arrays (Pacman grid)  
+- **Libraries:**  
+  - `copy` (deep copying of states and paths)
+
+---
 
 ## Installation & Run Guide
 
