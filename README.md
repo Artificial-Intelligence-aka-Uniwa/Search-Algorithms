@@ -116,9 +116,10 @@ The project combines **theoretical problem formulation** with **practical algori
 
 ## Installation & Run Guide
 
+### Prerequisites
+
 This project requires **Python 3** to be installed on your system.
 
-### Verify Python Installation
 Check that Python is available by running:
 ```bash
 python --version
@@ -128,28 +129,27 @@ or
 python3 --version
 ```
 
-## Pacman Blind Search Program
-
-### Install Python
-
 If Python is not installed, download it from:
 
 [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 ---
 
-## Run the Program
+### Install
 
-1. Clone this repository to your local machine. 
+Clone this repository to your local machine. 
 ```bash
 git clone https://github.com/Artificial-Intelligence-aka-Uniwa/Search-Algorithms.git
 ``` 
-2. Navigate to the project directory:
+Navigate to the project directory:
 
 ```bash
 cd Search-Algorithms/src
 ```
-3. Execute the program:
+
+### Run
+
+Execute the program:
 ```bash
 python pacman.py
 ```
@@ -157,8 +157,6 @@ or (depending on your system)
 ```bash
 python3 pacman.py
 ```
-
-## Program Execution
 
 When the program starts, you will be prompted to select a blind search algorithm:
 
