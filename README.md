@@ -147,6 +147,8 @@ Navigate to the project directory:
 cd Search-Algorithms/src
 ```
 
+---
+
 ### Run
 
 Execute the program:
