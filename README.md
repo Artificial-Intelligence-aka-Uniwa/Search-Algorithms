@@ -19,13 +19,16 @@
 </h1>
 
 <p align="center">
-  <strong>Vasileios Evangelos Athanasiou</strong><br>
+  <strong>Vasileios Evangelos Athanasiou</strong> -
+  <a href="https://github.com/Ath21" target="_blank">GitHub</a><br> 
   Student ID: 19390005
 </p>
 
 <p align="center">
-  Supervisor: Paris Mastorokostas, Professor<br>
+  Supervisor: Paris Mastorokostas, Professor - 
+  <a href="https://ice.uniwa.gr/en/emd_person/paris-mastorocostas/" target="_blank">UNIWA Profile</a><br>
   Co-supervisor: Panagiota Tselenti, Laboratory Teaching Staff
+  <a href="https://ice.uniwa.gr/en/emd_person/panagiota-tselenti/" target="_blank">UNIWA Profile</a><br>
 </p>
 
 <p align="center">
