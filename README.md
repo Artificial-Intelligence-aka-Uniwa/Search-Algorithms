@@ -46,13 +46,24 @@ The project combines **theoretical problem formulation** with **practical algori
 
 ## Table of Contents
 
-| Section | Title          | Description                                    |
-|--------:|----------------|------------------------------------------------|
-| assign  | Assignment     | Contains assignments and tasks                 |
-| docs    | Documentation  | Project documentation, guides, and notes       |
-| src     | Source Code    | All source code files and implementations      |
-| res     | Results        | Output results                                 |
-
+| Section | Folder | Description |
+|------:|--------|-------------|
+| 1 | `assign/` | Assignment material for the Artificial Intelligence course |
+| 1.1 | `assign/Assignment_1_AI.pdf` | Assignment description in English |
+| 1.2 | `assign/Εργασία_1_ΤΝ.pdf` | Assignment description in Greek |
+| 2 | `docs/` | Project documentation for search algorithms |
+| 2.1 | `docs/Search-Algorithms.pdf` | English documentation covering search algorithms |
+| 2.2 | `docs/Αλγόριθμοι-Αναζήτησης.pdf` | Greek documentation covering search algorithms |
+| 3 | `res/` | Input and output resources for algorithm execution |
+| 3.1 | `res/bfs.txt` | Breadth-First Search (BFS) execution output |
+| 3.2 | `res/dfs.txt` | Depth-First Search (DFS) execution output |
+| 3.3 | `res/step_D_first.txt` | Intermediate step output for DFS (first phase) |
+| 3.4 | `res/step_D_second.txt` | Intermediate step output for DFS (second phase) |
+| 3.5 | `res/goal_found.txt` | Output indicating successful goal discovery |
+| 3.6 | `res/no_solution.txt` | Output indicating no solution found |
+| 4 | `src/` | Source code implementation |
+| 4.1 | `src/pacman.py` | Python implementation of search algorithms (Pacman problem) |
+| 5 | `README.md` | Repository overview and usage instructions |
 ---
 
 ## Contents
