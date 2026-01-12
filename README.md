@@ -44,11 +44,6 @@
 </p>
 
 <p align="center">
-  <a href="https://ice.uniwa.gr/emd_person/17586/" target="_blank">UNIWA Profile</a>
-</p>
-
-
-<p align="center">
   Athens, January 2023
 </p>
 
