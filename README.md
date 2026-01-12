@@ -19,17 +19,27 @@
 </h1>
 
 <p align="center">
-  <strong>Vasileios Evangelos Athanasiou</strong> -
-  <a href="https://github.com/Ath21" target="_blank">GitHub</a><br>
+  <strong>Vasileios Evangelos Athanasiou</strong><br>
   Student ID: 19390005
+</p>
+
+<p align="center">
+  <a href="https://github.com/Ath21" target="_blank">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/vasilis-athanasiou-7036b53a4/" target="_blank">LinkedIn</a>
 </p>
 
 <p align="center">
   Supervisor: Paris Mastorokostas, Professor -
   <a href="https://ice.uniwa.gr/en/emd_person/paris-mastorocostas/" target="_blank">UNIWA Profile</a><br>
   Co-supervisor: Panagiota Tselenti, Laboratory Teaching Staff -
-  <a href="https://ice.uniwa.gr/en/emd_person/panagiota-tselenti/" target="_blank">UNIWA Profile</a>
+  <a href="https://ice.uniwa.gr/en/emd_person/panagiota-tselenti/" target="_blank">UNIWA Profile</a> ·
+  <a href="https://www.linkedin.com/in/panagiotatselenti/" target="_blank">LinkedIn</a>
 </p>
+
+<p align="center">
+  <a href="https://ice.uniwa.gr/emd_person/17586/" target="_blank">UNIWA Profile</a>
+</p>
+
 
 <p align="center">
   Athens, January 2023
