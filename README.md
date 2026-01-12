@@ -29,9 +29,16 @@
 </p>
 
 <p align="center">
-  Supervisor: Paris Mastorokostas, Professor -
-  <a href="https://ice.uniwa.gr/en/emd_person/paris-mastorocostas/" target="_blank">UNIWA Profile</a><br>
-  Co-supervisor: Panagiota Tselenti, Laboratory Teaching Staff -
+  Supervisor: Paris Mastorokostas, Professor
+</p>
+<p align="center">
+  <a href="https://ice.uniwa.gr/en/emd_person/paris-mastorocostas/" target="_blank">UNIWA Profile</a>
+</p>
+
+<p align="center">
+  Co-supervisor: Panagiota Tselenti, Laboratory Teaching Staff
+</p>
+<p align="center">
   <a href="https://ice.uniwa.gr/en/emd_person/panagiota-tselenti/" target="_blank">UNIWA Profile</a> ·
   <a href="https://www.linkedin.com/in/panagiotatselenti/" target="_blank">LinkedIn</a>
 </p>
