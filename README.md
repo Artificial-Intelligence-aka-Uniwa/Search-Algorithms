@@ -205,3 +205,11 @@ The search terminates when:
 - A goal state (all fruits are eaten) is reached, or No valid solution exists
 
 The solution path is displayed as a sequence of 2D grid states, printed step-by-step.
+
+---
+
+## Open the Documentation
+1. Navigate to the `docs/` directory
+2. Open the report corresponding to your preferred language:
+    - English: `Search-Algorithms.pdf`
+    - Greek: `Αλγόριθμοι-Αναζήτησης.pdf`
