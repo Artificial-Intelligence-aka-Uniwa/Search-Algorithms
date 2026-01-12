@@ -50,7 +50,7 @@
 
 ---
 
-## Overview
+# Project Overview
 
 This repository presents the implementation and analysis of **search algorithms applied to the Pacman problem**.  
 The study focuses on modeling the problem space, defining transition operators, and implementing traversal algorithms using **Python**, with emphasis on **Breadth-First Search (BFS)**.
@@ -140,9 +140,9 @@ The project combines **theoretical problem formulation** with **practical algori
 
 ---
 
-## Installation & Run Guide
+# Installation & Run Guide
 
-### Prerequisites
+## Prerequisites
 
 This project requires **Python 3** to be installed on your system.
 
@@ -161,7 +161,7 @@ If Python is not installed, download it from:
 
 ---
 
-### Install
+## Install
 
 Clone this repository to your local machine. 
 ```bash
@@ -175,7 +175,7 @@ cd Search-Algorithms/src
 
 ---
 
-### Run
+## Run
 
 Execute the program:
 ```bash
